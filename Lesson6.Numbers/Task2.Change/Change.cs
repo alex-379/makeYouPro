@@ -1,0 +1,10 @@
+﻿Console.WriteLine("Введите число A");
+double A = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Введите число B");
+double B = Convert.ToDouble(Console.ReadLine());
+double c = B;
+B = A;
+A = c;
+Console.WriteLine("Число A равно: " + A);
+Console.WriteLine("Число B равно: " + B);
+await Task.Delay(2000);
