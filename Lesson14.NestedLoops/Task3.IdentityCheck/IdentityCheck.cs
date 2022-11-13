@@ -8,17 +8,25 @@ while (a != 0)
     int digA = a % 10;
     int tmp = b;
     while (b != 0)
-    { 
-    int digB = b % 10;
+    {
+        int digB = b % 10;
         if (digB == digA)
         {
             f = false;
             break;
         }
-    b = b / 10;
+        b = b / 10;
     }
-    a = a / 10;
-    b = tmp;
+    if (f == false)
+    {
+        break;
+    }
+    else
+    {
+        a = a / 10;
+        b = tmp;
+    }
+
 }
 if (f)
 {
