@@ -5,7 +5,7 @@ while (a != 0)
 {
     int tmp = a % 10;
     a = a / 10;
-    aMirror = aMirror * 10;
+    aMirror *= 10;
     aMirror += tmp;
 }
 Console.WriteLine(aMirror);
