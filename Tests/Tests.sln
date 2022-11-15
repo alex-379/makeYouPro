@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeasuringTime", "MeasuringTime\MeasuringTime.csproj", "{E8F68FA5-5123-4C50-BE38-B0168D1B5BA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeasuringTime", "MeasuringTime\MeasuringTime.csproj", "{E8F68FA5-5123-4C50-BE38-B0168D1B5BA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Method", "Method\Method.csproj", "{CA4FC1B4-106F-46FE-86D4-96EAFAB8AF75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectCalculator", "ProjectCalculator\ProjectCalculator.csproj", "{110035BC-3EEA-47EE-849F-43E34DF45F2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{E8F68FA5-5123-4C50-BE38-B0168D1B5BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8F68FA5-5123-4C50-BE38-B0168D1B5BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8F68FA5-5123-4C50-BE38-B0168D1B5BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA4FC1B4-106F-46FE-86D4-96EAFAB8AF75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA4FC1B4-106F-46FE-86D4-96EAFAB8AF75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA4FC1B4-106F-46FE-86D4-96EAFAB8AF75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA4FC1B4-106F-46FE-86D4-96EAFAB8AF75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{110035BC-3EEA-47EE-849F-43E34DF45F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{110035BC-3EEA-47EE-849F-43E34DF45F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{110035BC-3EEA-47EE-849F-43E34DF45F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{110035BC-3EEA-47EE-849F-43E34DF45F2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
