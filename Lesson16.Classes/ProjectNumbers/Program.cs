@@ -6,7 +6,7 @@ class Program
     public static void Main(string[] args)
     {
         double a = OperationsWithNumbers.ReadFromConsole();
-        double b = OperationsWithNumbers.ReadFromConsole();
+        /*double b = OperationsWithNumbers.ReadFromConsole();
         double c = OperationsWithNumbers.ReadFromConsole();
         double x = OperationsWithNumbers.ValueOfLinearEqution(a, b, c);
         OperationsWithNumbers.WriteResult(x);
@@ -14,9 +14,10 @@ class Program
         a = OperationsWithNumbers.ReadFromConsole();
         b = OperationsWithNumbers.ReadFromConsole();
         double result = OperationsWithNumbers.SumIfAMoreMultiplyIfEqualDifferenceIfBMore(a, b);
-        OperationsWithNumbers.WriteResult(result);
+        OperationsWithNumbers.WriteResult(result);*/
 
-        /*double res3 = OperationsWithNumbers.Number2DigitToString(a);
-        Console.WriteLine($"\nРезультат действия с числами равен: {res3}");*/
+        a = OperationsWithNumbers.ReadFromConsole();
+        string resultString = OperationsWithNumbers.Number2DigitToString(a);  
+
     }
 }
