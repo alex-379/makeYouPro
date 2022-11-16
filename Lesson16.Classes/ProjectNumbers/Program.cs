@@ -22,5 +22,8 @@ class Program
 
         double res2 = OperationsWithNumbers.SumIfAMoreMultiplyIfEqualDifferenceIfBMore(a, b);
         Console.WriteLine($"\nРезультат действия с числами равен: {res2}");
+        
+        double res3 = OperationsWithNumbers.Number2DigitToString(a);
+        Console.WriteLine($"\nРезультат действия с числами равен: {res3}");
     }
 }
