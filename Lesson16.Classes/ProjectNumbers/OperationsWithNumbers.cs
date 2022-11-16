@@ -131,5 +131,29 @@ namespace ProjectNumbers
             }        
             return (number);
         }
+        public static bool CheckEnteringRange(double a)
+        {
+        if (0 <= a <= 10 || 20 <= a <= 30 || 40 <= a <= 50)
+        {
+        bool result = true;
+        }
+            else
+            {
+            result = falce;
+            }
+            return (result);
+        }
+        public static AddNumbersDivisibleBy7 (int a, int b)
+            for (int i = a; i <= b; i++)
+            {
+               int result = 0;
+                if i % 7 == 0
+                {
+                result += i;
+                } 
+            }
+            return (result);
+        public static ReturnNumberOfRowFibbonachi (int n)
+            
     }
 }
