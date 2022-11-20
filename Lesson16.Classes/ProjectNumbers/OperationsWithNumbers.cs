@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,105 +9,184 @@ namespace ProjectNumbers
 {
     public static class OperationsWithNumbers
     {
-        public static double ReadFromConsole()
+        public static double ReadNumberFromConsole(string characteristic = "", string nameVar = "")
         {
-            Console.WriteLine("Введите число: ");
-            string s = Console.ReadLine();
-            double n = Convert.ToDouble(s);
-            return (n);
+            string s = string.Empty;
+            double n = 0.0;
+            bool isNumber = false;
+            while (!isNumber)
+            {
+                Console.WriteLine($"Введите{characteristic} число{nameVar}: ");
+                s = Console.ReadLine() ?? string.Empty;
+                isNumber = double.TryParse(s, out n);
+                if (!isNumber)
+                {
+                    Console.WriteLine("Вы ввели некорректные данные.");
+                }
+                else
+                {
+                    n = Convert.ToDouble(s);
+                }
+            }
+            return n;
         }
 
-        public static void WriteResult(double res)
+        public static int ReadNumberIntFromConsole(string characteristic = "", string nameVar = "")
         {
-            Console.WriteLine($"\nРезультат: {res}\n\n");
+            string s = string.Empty;
+            int n = 0;
+            bool isNumberInt = false;
+            while (!isNumberInt)
+            {
+                Console.WriteLine($"Введите{characteristic} число{nameVar}: ");
+                s = Console.ReadLine() ?? string.Empty;
+                isNumberInt = int.TryParse(s, out n);
+                if (!isNumberInt)
+                {
+                    Console.WriteLine("Вы ввели некорректные данные.");
+                }
+                else
+                {
+                    n = Convert.ToInt32(s);
+                }
+
+            }
+            return n;
         }
 
-        public static double ValueOfLinearEqution(double a, double b, double c)
+        public static int ReadNumber2DigitFromConsole(string characteristic = "", string nameVar = "")
+        {
+            int n = 0;
+            while (n < 10 || n >= 100)
+            {
+                n = ReadNumberIntFromConsole(characteristic, nameVar);
+                if (n < 10 || n >= 100)
+                {
+                    Console.WriteLine("Вы ввели некорректные данные.");
+                }
+            }
+            return n;
+        }
+
+        public static int ReadNumberPositiveFromConsole(string characteristic = "", string nameVar = "")
+        {
+            int n = 0;
+            while (n <= 0)
+            {
+                n = ReadNumberIntFromConsole(characteristic, nameVar);
+                if (n <= 0)
+                {
+                    Console.WriteLine("Вы ввели некорректные данные.");
+                }
+            }
+            return n;
+        }
+
+        public static void WriteResult(double result, string nameResult) => Console.WriteLine($"{nameResult}: {result}\n");
+
+        public static void WriteResult(string result, string nameResult) => Console.WriteLine($"{nameResult}: {result}\n");
+
+        public static void WriteResult(bool result, string nameResult) => Console.WriteLine($"{nameResult}: {result}\n");
+
+        public static double CalculateValueOfLinearEqution(double a, double b, double c)
         {
             double x = (c - b) / a;
             return (x);
         }
 
-        public static double SumIfAMoreMultiplyIfEqualDifferenceIfBMore(double a, double b)
+        public static double AddIfAMoreMultiplyIfEqualSubstractIfBMore(double a, double b, out string nameResult)
         {
-            double result = 0;
-            if (a > b) result = a + b;
-            if (a == b) result = a * b;
-            if (a < b) result = a - b;
-            return (result);
-        }
-        public static string Number2DigitToString(int a)
-        {
-            string number = "Введённое число не двузначное";
-
-            if (a >= 10 && a < 20)
+            double result;
+            if (a > b)
             {
-                switch (a)
-                {
-                    case 10:
-                        number = "Десять";
-                        break;
-                    case 11:
-                        number = "Одиннадцать";
-                        break;
-                    case 12:
-                        number = "Двенадцать";
-                        break;
-                    case 13:
-                        number = "Тринадцать";
-                        break;
-                    case 14:
-                        number = "Четырнадцать";
-                        break;
-                    case 15:
-                        number = "Пятнадцать";
-                        break;
-                    case 16:
-                        number = "Шестнадцать";
-                        break;
-                    case 17:
-                        number = "Семнадцать";
-                        break;
-                    case 18:
-                        number = "Восемнадцать";
-                        break;
-                    case 19:
-                        number = "Девятнадцать";
-                        break;
-                }
+                result = a + b;
+                nameResult = "Сумма равна";
+            }
+            else if (a == b)
+            {
+                result = a * b;
+                nameResult = "Произведение равно";
             }
             else
             {
-                int digit1 = a % 10;
-                int digit2 = a / 10;
+                result = a - b;
+                nameResult = "Разность равна";
+            }
+            return result;
+        }
+
+        public static string ConvertNumber2DigitToString(int n)
+        {
+            string s = "";
+
+            if (n >= 10 && n < 20)
+            {
+                switch (n)
+                {
+                    case 10:
+                        s = "десять";
+                        break;
+                    case 11:
+                        s = "одиннадцать";
+                        break;
+                    case 12:
+                        s = "двенадцать";
+                        break;
+                    case 13:
+                        s = "тринадцать";
+                        break;
+                    case 14:
+                        s = "четырнадцать";
+                        break;
+                    case 15:
+                        s = "пятнадцать";
+                        break;
+                    case 16:
+                        s = "шестнадцать";
+                        break;
+                    case 17:
+                        s = "семнадцать";
+                        break;
+                    case 18:
+                        s = "восемнадцать";
+                        break;
+                    case 19:
+                        s = "девятнадцать";
+                        break;
+                }
+            }
+            else if (n >= 20 && n < 100)
+            {
+                int digit1 = n / 10;
+                int digit2 = n % 10;
                 string letter1 = "";
                 string letter2 = "";
 
                 switch (digit1)
                 {
                     case 2:
-                        letter1 = "Двадцать";
+                        letter1 = "двадцать";
                         break;
                     case 3:
-                        letter1 = "Тридцать";
+                        letter1 = "тридцать";
                         break;
                     case 4:
-                        letter1 = "Сорок";
+                        letter1 = "сорок";
                         break;
                     case 5:
-                        letter1 = "Пятьдесят";
+                        letter1 = "пятьдесят";
                         break;
                     case 6:
-                        letter1 = "Шестьдесят";
+                        letter1 = "шестьдесят";
                         break;
                     case 7:
-                        letter1 = "Семьдесят";
+                        letter1 = "семьдесят";
                         break;
                     case 8:
-                        letter1 = "Восемьдесят";
+                        letter1 = "восемьдесят";
                         break;
                     case 9:
-                        letter1 = "Девяносто";
+                        letter1 = "девяносто";
                         break;
                 }
 
@@ -140,33 +220,114 @@ namespace ProjectNumbers
                         letter2 = "девять";
                         break;
                 }
-                number = ($"{letter1 }{letter2}");
+                s = ($"{letter1} {letter2}");
             }
-            return (number);
+            return s;
         }
-        /*public static bool CheckEnteringRange(double a)
+
+        public static bool CheckEnteringInRange(double n)
         {
-            if (0 <= a <= 10 || 20 <= a <= 30 || 40 <= a <= 50)
+            bool result = false;
+            if (0 <= n && n <= 10 || 20 <= n && n <= 30 || 40 <= n && n <= 50)
             {
-                bool result = true;
+                result = true;
+            }
+            return result;
+        }
+
+        public static double AddNumbersDivisibleBy7(double a, double b)
+        {
+            double result = 0;
+            double left = Math.Ceiling(a);
+            for (double i = left; i <= b; i++)
+            {
+
+                if (i % 7 == 0)
+                {
+                    result += i;
+                }
+            }
+            return result;
+        }
+
+        public static int ReturnNumberNOfRowFibbonachi (int n)
+        {
+            int fibN = 0;
+            if (n <= 2)
+            {
+                fibN = 1;
             }
             else
             {
-                result = falce;
-            }
-            return (result);
-        }
-        public static AddNumbersDivisibleBy7(int a, int b)
-            for (int i = a; i <= b; i++)
-            {
-               int result = 0;
-                if i % 7 == 0
+                int fib1 = 1;
+                int fib2 = 1;
+                for (int i = 2; i < n; i++)
                 {
-                result += i;
+                    fibN = fib1 + fib2;
+                    fib1 = fib2;
+                    fib2 = fibN;
                 }
-}
-return (result);
-public static ReturnNumberOfRowFibbonachi (int n)
-            */
+            }
+            return fibN;
+        }
+
+        public static int CountOddDigitsOfNumber (int n)
+        {
+            int count = 0;
+            while (n != 0)
+            {
+                int tmp = n % 10;
+                if (tmp % 2 != 0)
+                {
+                    count++;
+                }
+                n /= 10;
+            }
+            return count;
+        }
+
+        public static int MirrorNumber(int n)
+        {
+            int aMirror = 0;
+            while (n != 0)
+            {
+                int tmp = n % 10;
+                n /= 10;
+                aMirror *= 10;
+                aMirror += tmp;
+            }
+            return aMirror;
+        }
+
+        public static bool CheckOnIdentity(int n, int n2)
+        {
+            bool result = false;
+
+            while (n != 0)
+            {
+                int digA = n % 10;
+                int tmp = n2;
+                while (n2 != 0)
+                {
+                    int digB = n2 % 10;
+                    if (digB == digA)
+                    {
+                        result = true;
+                        break;
+                    }
+                    n2 /= 10;
+                }
+                if (result == true)
+                {
+                    break;
+                }
+                else
+                {
+                    n /= 10;
+                    n2 = tmp;
+                }
+            }
+            return result;
+        }
     }
 }
