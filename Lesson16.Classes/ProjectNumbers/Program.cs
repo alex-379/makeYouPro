@@ -1,4 +1,4 @@
-п»їnamespace ProjectNumbers;
+namespace ProjectNumbers;
 
 using ProjectNumbers;
 using System.Reflection.Metadata;
@@ -11,41 +11,41 @@ class Program
         double b = OperationsWithNumbers.ReadNumberFromConsole(nameVar: " B");
         double c = OperationsWithNumbers.ReadNumberFromConsole(nameVar: " C");
         double result = OperationsWithNumbers.CalculateValueOfLinearEqution(a, b, c);
-        OperationsWithNumbers.WriteResult(result, "Р—РЅР°С‡РµРЅРёРµ X СЂР°РІРЅРѕ");
+        OperationsWithNumbers.WriteResult(result, "Значение X равно");
 
         a = OperationsWithNumbers.ReadNumberFromConsole(nameVar: " A");
         b = OperationsWithNumbers.ReadNumberFromConsole(nameVar: " B");
         result = OperationsWithNumbers.AddIfAMoreMultiplyIfEqualSubstractIfBMore(a, b, out string nameResult);
         OperationsWithNumbers.WriteResult(result, nameResult);
 
-        int numberTwoDigit = OperationsWithNumbers.ReadNumber2DigitFromConsole(characteristic: " РґРІСѓР·РЅР°С‡РЅРѕРµ");
+        int numberTwoDigit = OperationsWithNumbers.ReadNumber2DigitFromConsole(characteristic: " двузначное");
         string resultString = OperationsWithNumbers.ConvertNumber2DigitToString(numberTwoDigit);
-        OperationsWithNumbers.WriteResult(resultString, $"РџСЂРѕРїРёСЃРЅР°СЏ Р·Р°РїРёСЃСЊ С‡РёСЃР»Р° {numberTwoDigit}");
+        OperationsWithNumbers.WriteResult(resultString, $"Прописная запись числа {numberTwoDigit}");
 
         a = OperationsWithNumbers.ReadNumberFromConsole();
         bool resultBool = OperationsWithNumbers.CheckEnteringInRange(a);
-        OperationsWithNumbers.WriteResult(resultBool, "Р РµР·СѓР»СЊС‚Р°С‚ РїСЂРѕРІРµСЂРєРё РЅР° РІС…РѕР¶РґРµРЅРёРµ РІ РґРёР°РїР°Р·РѕРЅ");
+        OperationsWithNumbers.WriteResult(resultBool, "Результат проверки на вхождение в диапазон");
 
         a = OperationsWithNumbers.ReadNumberFromConsole(nameVar: " A");
         b = OperationsWithNumbers.ReadNumberFromConsole(nameVar: " B");
         result = OperationsWithNumbers.AddNumbersDivisibleBy7(a, b);
-        OperationsWithNumbers.WriteResult(result, $"CСѓРјРјР° С‡РёСЃРµР» РёР· РґРёР°РїР°Р·РѕРЅР° РѕС‚ {a} РґРѕ {b}, РґРµР»СЏС‰РёС…СЃСЏ РЅР° 7");
+        OperationsWithNumbers.WriteResult(result, $"Cумма чисел из диапазона от {a} до {b}, делящихся на 7");
 
-        int n = OperationsWithNumbers.ReadNumberPositiveFromConsole(" РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРµ", " N");
+        int n = OperationsWithNumbers.ReadNumberPositiveFromConsole(" положительное", " N");
         result = OperationsWithNumbers.ReturnNumberNOfRowFibbonachi(n);
-        OperationsWithNumbers.WriteResult(result, $"{n}-Рµ С‡РёСЃР»Рѕ СЂСЏРґР° Р¤РёР±РѕРЅР°С‡С‡Рё");
+        OperationsWithNumbers.WriteResult(result, $"{n}-е число ряда Фибоначчи");
 
         n = OperationsWithNumbers.ReadNumberIntFromConsole();
         result = OperationsWithNumbers.CountOddDigitsOfNumber(n);
-        OperationsWithNumbers.WriteResult(result, $"РљРѕР»РёС‡РµСЃС‚РІРѕ РЅРµС‡С‘С‚РЅС‹С… С†РёС„СЂ С‡РёСЃР»Р° {n}");
+        OperationsWithNumbers.WriteResult(result, $"Количество нечётных цифр числа {n}");
 
         n = OperationsWithNumbers.ReadNumberIntFromConsole();
         result = OperationsWithNumbers.MirrorNumber(n);
-        OperationsWithNumbers.WriteResult(result, $"Р—РµСЂРєР°Р»СЊРЅРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ С‡РёСЃР»Р° {n}");
+        OperationsWithNumbers.WriteResult(result, $"Зеркально отображение числа {n}");
 
         n = OperationsWithNumbers.ReadNumberIntFromConsole(nameVar: " 1");
         int n2 = OperationsWithNumbers.ReadNumberIntFromConsole(nameVar: " 2");
         resultBool = OperationsWithNumbers.CheckOnIdentity(n, n2);
-        OperationsWithNumbers.WriteResult(resultBool, "Р РµР·СѓР»СЊС‚Р°С‚ РїСЂРѕРІРµСЂРєРё РЅР° РЅР°Р»РёС‡РёРµ РѕРґРёРЅР°РєРѕРІС‹С… С†РёС„СЂ");
+        OperationsWithNumbers.WriteResult(resultBool, "Результат проверки на наличие одинаковых цифр");
     }
 }
