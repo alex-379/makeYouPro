@@ -1,7 +1,4 @@
-namespace ProjectNumbers;
-
 using ProjectNumbers;
-using System.Reflection.Metadata;
 
 class Program
 {
