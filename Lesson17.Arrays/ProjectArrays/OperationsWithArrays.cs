@@ -1,4 +1,5 @@
 ﻿namespace ProjectArrays;
+
 public static class OperationsWithArrays
 {
     public static int ReadLengthFromConsole()
