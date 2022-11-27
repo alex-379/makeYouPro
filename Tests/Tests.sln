@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generic", "Generic\Generic.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadLineABC", "ReadLineABC\ReadLineABC.csproj", "{E1E520CA-15FB-450C-A0FF-D6B8F3A005B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintMedABC", "PrintMedABC\PrintMedABC.csproj", "{685B1C5F-F876-4CCB-BB06-87388FD403D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintMedABC", "PrintMedABC\PrintMedABC.csproj", "{685B1C5F-F876-4CCB-BB06-87388FD403D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OddNumbers", "OddNumbers\OddNumbers.csproj", "{1D9AAB21-9911-4D00-A46B-41948B463372}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "expression Switch", "expression Switch\expression Switch.csproj", "{7B5AD9EA-03B9-4E83-B5CC-9A51068611C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{685B1C5F-F876-4CCB-BB06-87388FD403D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{685B1C5F-F876-4CCB-BB06-87388FD403D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{685B1C5F-F876-4CCB-BB06-87388FD403D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D9AAB21-9911-4D00-A46B-41948B463372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9AAB21-9911-4D00-A46B-41948B463372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9AAB21-9911-4D00-A46B-41948B463372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9AAB21-9911-4D00-A46B-41948B463372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5AD9EA-03B9-4E83-B5CC-9A51068611C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5AD9EA-03B9-4E83-B5CC-9A51068611C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5AD9EA-03B9-4E83-B5CC-9A51068611C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5AD9EA-03B9-4E83-B5CC-9A51068611C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

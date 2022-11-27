@@ -4,7 +4,7 @@ public static class OperationsWithNumbers
 {
     public static double ReadNumberFromConsole(string characteristic = "", string nameVar = "")
     {
-        string s = string.Empty;
+        string s;
         double n = 0.0;
         bool isNumber = false;
         while (!isNumber)
@@ -27,7 +27,7 @@ public static class OperationsWithNumbers
 
     public static int ReadNumberIntFromConsole(string characteristic = "", string nameVar = "")
     {
-        string s = string.Empty;
+        string s;
         int n = 0;
         bool isNumberInt = false;
         while (!isNumberInt)
