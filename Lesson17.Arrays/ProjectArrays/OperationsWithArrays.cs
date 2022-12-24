@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace ProjectArrays;
+﻿namespace ProjectArrays;
 
 public static class OperationsWithArrays
 {
