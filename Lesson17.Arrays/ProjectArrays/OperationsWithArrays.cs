@@ -1,4 +1,6 @@
-﻿namespace ProjectArrays;
+﻿using System.Globalization;
+
+namespace ProjectArrays;
 
 public static class OperationsWithArrays
 {
@@ -8,7 +10,7 @@ public static class OperationsWithArrays
         bool isNumberInt = false;
         while (!isNumberInt || n < 1)
         {
-            Console.WriteLine("Введите длину массива");
+            Console.WriteLine("Введите длину массива:");
             string? s = Console.ReadLine();
             isNumberInt = int.TryParse(s, out n);
             if (!isNumberInt || n < 1)
@@ -30,7 +32,7 @@ public static class OperationsWithArrays
             bool isNumber = false;
             while (!isNumber)
             {
-                Console.WriteLine($"Введите {j}-й элемент массива");
+                Console.WriteLine($"Введите {j}-й элемент массива:");
                 string? s = Console.ReadLine();
                 isNumber = int.TryParse(s, out n);
                 if (!isNumber)
@@ -44,12 +46,24 @@ public static class OperationsWithArrays
         return numbers;
     }
 
-    public static void WriteResult(double result, string nameResult)
+    public static double[] Generate(int n, int a, int b)
+    {
+        double[] array = new double[n];
+        Random random = new();
+        for (int i = 0; i < n; i++)
+        {
+            array[i] = random.Next(a, b);
+        }
+
+        return array;
+    }
+
+    public static void Write(double result, string nameResult)
     {
         Console.WriteLine($"{nameResult}: {result}\n");
     }
 
-    public static void WriteResult(double[] result, string nameResult)
+    public static void Write(double[] result, string nameResult)
     {
         Console.Write($"{nameResult}: ");
         for (int i = 0; i < result.Length; ++i)
@@ -104,12 +118,12 @@ public static class OperationsWithArrays
         return indexOdd;
     }
 
-    public static double GetSumElementsArray(double[] numbersOdd)
+    public static double GetSumElementsArray(double[] numbers)
     {
         double sum = 0;
-        for (int i = 0; i < numbersOdd.Length; i++)
+        for (int i = 0; i < numbers.Length; i++)
         {
-            sum += numbersOdd[i];
+            sum += numbers[i];
         }
 
         return sum;
@@ -121,8 +135,8 @@ public static class OperationsWithArrays
         double[] numbersReverse = copy;
         for (int i = 0; i < numbers.Length / 2; i++)
         {
-            (copy[numbers.Length - 1 - i], numbersReverse[i]) =
-            (numbersReverse[i], copy[numbers.Length - 1 - i]);
+            (copy[copy.Length - 1 - i], numbersReverse[i]) =
+            (numbersReverse[i], copy[copy.Length - 1 - i]);
         }
 
         return numbersReverse;
@@ -171,13 +185,125 @@ public static class OperationsWithArrays
         for (int i = 0; i < numbers.Length / 2; i++)
         {
             _ = numbers.Length % 2 == 0
-            ? (copy[numbers.Length / 2 + i], numbersSwap[i]) =
-              (numbersSwap[i], copy[numbers.Length / 2 + i])
-            : (copy[numbers.Length / 2 + 1 + i], numbersSwap[i]) =
-              (numbersSwap[i], copy[numbers.Length / 2 + 1 + i]);
+            ? (copy[copy.Length / 2 + i], numbersSwap[i]) =
+              (numbersSwap[i], copy[copy.Length / 2 + i])
+            : (copy[copy.Length / 2 + 1 + i], numbersSwap[i]) =
+              (numbersSwap[i], copy[copy.Length / 2 + 1 + i]);
 
         }
 
         return numbersSwap;
+    }
+
+    public static double[] SortSelectUp(double[] numbers)
+    {
+        double[] numbersSort = numbers.ToArray();
+        for (int i = 0; i < numbersSort.Length - 1; i++)
+        {
+            int minIndex = i;
+            for (int j = i + 1; j < numbersSort.Length; j++)
+            {
+                if (numbersSort[minIndex] > numbersSort[j])
+                {
+                    minIndex = j;
+                }
+            }
+            (numbersSort[i], numbersSort[minIndex]) =
+            (numbersSort[minIndex], numbersSort[i]);
+        }
+
+        return numbersSort;
+    }
+
+    public static double[] SortSelectDown(double[] numbers)
+    {
+        double[] numbersSort = numbers.ToArray();
+        for (int i = 0; i < numbersSort.Length - 1; i++)
+        {
+            int maxIndex = i;
+            for (int j = i + 1; j < numbersSort.Length; j++)
+            {
+                if (numbersSort[maxIndex] < numbersSort[j])
+                {
+                    maxIndex = j;
+                }
+            }
+            (numbersSort[i], numbersSort[maxIndex]) =
+            (numbersSort[maxIndex], numbersSort[i]);
+        }
+
+        return numbersSort;
+    }
+
+    public static double[] SortBubbleUp(double[] numbers)
+    {
+        double[] numbersSort = numbers.ToArray();
+        for (int i = 0; i < numbersSort.Length; i++)
+        {
+            for (int j = 0; j < numbersSort.Length - 1 -i; j++)
+            {
+                if (numbersSort[j] > numbersSort[j+1])
+                {
+                    (numbersSort[j], numbersSort[j+1]) =
+                    (numbersSort[j + 1], numbersSort[j]);
+                }
+            }
+        }
+
+        return numbersSort;
+    }
+
+    public static double[] SortBubbleDown(double[] numbers)
+    {
+        double[] numbersSort = numbers.ToArray();
+        for (int i = 0; i < numbersSort.Length; i++)
+        {
+            for (int j = 0; j < numbersSort.Length - 1 - i; j++)
+            {
+                if (numbersSort[j] < numbersSort[j + 1])
+                {
+                    (numbersSort[j], numbersSort[j + 1]) =
+                    (numbersSort[j + 1], numbersSort[j]);
+                }
+            }
+        }
+
+        return numbersSort;
+    }
+
+    public static double[] SortInsertUp(double[] numbers)
+    {
+        double[] numbersSort = numbers.ToArray();
+        for (int i = 1; i < numbersSort.Length; i++)
+        {
+            int j = i - 1;
+            double min = numbersSort[i];
+            while (j >= 0 && numbersSort[j] > min)
+            {
+                numbersSort[j + 1] = numbersSort[j];
+                numbersSort[j] = min;
+                j--;
+            }
+        }
+
+        return numbersSort;
+    }
+
+    public static double[] SortInsertDown(double[] numbers)
+    {
+        double[] numbersSort = numbers.ToArray();
+        for (int i = 1; i < numbersSort.Length; i++)
+        {
+            int j = i - 1;
+            double max = numbersSort[i];
+            while (j >= 0 && numbersSort[j] < max)
+            {
+                numbersSort[j + 1] = numbersSort[j];
+                j--;
+            }
+            numbersSort[j + 1] = max;
+        }
+
+        return numbersSort;
     }
 }
