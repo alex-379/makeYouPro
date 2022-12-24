@@ -86,6 +86,10 @@ public static class OperationsWithNumbers
 
     public static double CalculateValueOfLinearEqution(double a, double b, double c)
     {
+        if (a == 0)
+        {
+            throw new ArgumentException("a = 0. Деление на ноль невозможно");
+        }
         double x = (c - b) / a;
 
         return (x);
@@ -306,6 +310,11 @@ public static class OperationsWithNumbers
     public static bool CheckOnIdentity(int n, int n2)
     {
         bool result = false;
+
+        if (n == 0 && n2 == 0)
+        {
+            result = true;
+        }
 
         while (n != 0)
         {

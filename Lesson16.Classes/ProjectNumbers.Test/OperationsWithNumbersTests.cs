@@ -11,7 +11,7 @@ public class OperationsWithNumbersTests
     {
         double actual = OperationsWithNumbers.CalculateValueOfLinearEqution(a, b, c);
 
-        Assert.That(actual, Is.EqualTo(expected));        
+        Assert.That(actual, Is.EqualTo(expected));
     }
 
 
@@ -36,6 +36,37 @@ public class OperationsWithNumbersTests
         Assert.That(actual, Is.EqualTo(expected));
     }
 
+
+    [TestCase(41, "сорок один")]
+    [TestCase(10, "десять")]
+    [TestCase(25, "двадцать пять")]
+    [TestCase(99, "девяносто девять")]
+
+    public void ConvertNumber2DigitToStringTest(int n, string expected)
+    {
+        string actual = OperationsWithNumbers.ConvertNumber2DigitToString(n);
+
+        Assert.That(actual, Is.EqualTo(expected));
+    }
+
+
+    [TestCase(0, true)]
+    [TestCase(5, true)]
+    [TestCase(10, true)]
+    [TestCase(15, false)]
+    [TestCase(20, true)]
+    [TestCase(30, true)]
+    [TestCase(35, false)]
+    [TestCase(40, true)]
+    [TestCase(50, true)]
+    [TestCase(65, false)]
+
+    public void CheckEnteringInRangeTest(int n, bool expected)
+    {
+        bool actual = OperationsWithNumbers.CheckEnteringInRange(n);
+
+        Assert.That(actual, Is.EqualTo(expected));
+    }
 
     [TestCase(-8, 8, 0)]
     [TestCase(6, 15, 21)]
@@ -104,5 +135,30 @@ public class OperationsWithNumbersTests
         int actual = OperationsWithNumbers.MirrorNumber(n);
 
         Assert.That(actual, Is.EqualTo(expected));
+    }
+
+
+    [TestCase(0, 0, true)]
+    [TestCase(10, 10, true)]
+    [TestCase(15, 198, true)]
+    [TestCase(101, 350, true)]
+    [TestCase(15, 9843, false)]
+    [TestCase(20, 658910, true)]
+    [TestCase(30, 658943, true)]
+    [TestCase(35, 9476, false)]
+
+    public void CheckOnIdentityTest(int n, int n2, bool expected)
+    {
+        bool actual = OperationsWithNumbers.CheckOnIdentity(n, n2);
+
+        Assert.That(actual, Is.EqualTo(expected));
+    }
+
+
+    [TestCase(0, 2, 5)]
+
+    public void CalculateValueOfLinearEqutionTest_WhenAIsZero_ShouldReturnArgumentExeption(double a, double b, double c)
+    {
+        Assert.Throws<ArgumentException>(() => OperationsWithNumbers.CalculateValueOfLinearEqution(a, b, c));
     }
 }
