@@ -1,6 +1,6 @@
 ﻿using static ProjectArrays.OperationsWithArrays;
 
-/*int length = ReadLengthFromConsole();
+int length = ReadLengthFromConsole();
 double[] numbers = ReadArrayFromConsole(length);
 Write(numbers, "Исходный массив");
 
@@ -25,7 +25,7 @@ GetOddElementsArray(numbers, out int countOdd);
 Write(countOdd, "Количество нечётных элементов массива");
 
 double[] numbersSwap = SwapFirstAndSecondHalfArray(numbers);
-Write(numbersSwap, "Массив, в котором поменяны первая и вторая половины");*/
+Write(numbersSwap, "Массив, в котором поменяны первая и вторая половины");
 
 double[] array = Generate(10, -10, 20);
 Write(array, "Исходный массив");
