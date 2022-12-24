@@ -27,7 +27,7 @@ Write(countOdd, "Количество нечётных элементов мас
 double[] numbersSwap = SwapFirstAndSecondHalfArray(numbers);
 Write(numbersSwap, "Массив, в котором поменяны первая и вторая половины");*/
 
-double[] array = Generate(10, 0, 20);
+double[] array = Generate(10, -10, 20);
 Write(array, "Исходный массив");
 double[] arraySort = SortBubbleUp(array);
 Write(arraySort, "Массив, сортированный по возрастанию методом пузырьковой сортировки");
