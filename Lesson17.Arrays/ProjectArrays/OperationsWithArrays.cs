@@ -44,13 +44,13 @@ public static class OperationsWithArrays
         return numbers;
     }
 
-    public static double[] Generate(int n, int a, int b)
+    public static double[] Generate(int number, int left, int right)
     {
-        double[] array = new double[n];
+        double[] array = new double[number];
         Random random = new();
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < number; i++)
         {
-            array[i] = random.Next(a, b);
+            array[i] = random.Next(left, right);
         }
 
         return array;

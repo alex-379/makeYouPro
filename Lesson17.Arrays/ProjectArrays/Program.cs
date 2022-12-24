@@ -27,10 +27,10 @@ Write(countOdd, "Количество нечётных элементов мас
 double[] numbersSwap = SwapFirstAndSecondHalfArray(numbers);
 Write(numbersSwap, "Массив, в котором поменяны первая и вторая половины");
 
-double[] array = Generate(10, -10, 20);
-Write(array, "Исходный массив");
-double[] arraySort = SortBubbleUp(array);
-Write(arraySort, "Массив, сортированный по возрастанию методом пузырьковой сортировки");
+numbers = Generate(10, -10, 20);
+Write(numbers, "Исходный массив");
+double[] numbersSort = SortBubbleUp(numbers);
+Write(numbersSort, "Массив, сортированный по возрастанию методом пузырьковой сортировки");
 
-arraySort = SortInsertDown(array);
-Write(arraySort, "Массив, сортированный по убыванию методом вставок");
+numbersSort = SortInsertDown(numbers);
+Write(numbersSort, "Массив, сортированный по убыванию методом вставок");
