@@ -4,6 +4,11 @@ class Program
 {
     public static void Main(string[] args)
     {
+        if (args is null)
+        {
+            throw new ArgumentNullException(nameof(args));
+        }
+
         double a = OperationsWithNumbers.ReadNumberFromConsole(nameVar: " A");
         double b = OperationsWithNumbers.ReadNumberFromConsole(nameVar: " B");
         double c = OperationsWithNumbers.ReadNumberFromConsole(nameVar: " C");
