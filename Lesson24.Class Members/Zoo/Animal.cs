@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace Zoo;
+﻿namespace Zoo;
 
 public class Animal
 {
