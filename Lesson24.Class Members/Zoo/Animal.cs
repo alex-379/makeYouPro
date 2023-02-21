@@ -4,22 +4,23 @@ public class Animal
 {
     public string Name { get; set; }
 
-    public int Volume { get; set; }
+    public int Volume { get; private set; }
 
-    public int Age { get; set; }
+    public int Age { get; private set; }
 
-    public string Type { get; set; }
+    public string Type { get; private set; }
 
-    public string Biom { get; set; }
+    public string Biom { get; private set; }
 
-    public int Square { get; set; }
+    public int Square { get; private set; }
 
-    public string Food { get; set; }
+    public string Food { get; private set; }
 
-    public string Group { get; set; }
+    public string Group { get; private set; }
 
-    public string Sound { get; set; }
+    public string Sound { get; private set; }
 
+    private int _sumVolume = 0;
     public Animal(string name, int volume, int age, string type, string biom, int square, string food, string group, string sound)
     {
         Name = name;
@@ -35,15 +36,36 @@ public class Animal
 
     public void DescribeAnimal()
     {
-        Console.WriteLine($"{Type} {Name} обитает в биоме {Biom} на площади {Square} м^2.\n" +
-                          $"Его возраст в годах - {Age}. Это {Group}.\n" +
-                          $"Рацион питания - {Food} в количестве {Volume} кг в сутки.\n" +
+        Console.WriteLine($"{Type} {Name} - {Group}. Биом - {Biom}, площадь {Square} м^2.\n" +
+                          $"Возраст в годах - {Age}. Рацион питания - {Food} в количестве {Volume} кг в сутки.\n" +
                           $"Издаваемый звук - \"{Sound}\".\n");
     }
 
-    public void Eat()
+    public int Eat(string food, int volume)
     {
-        Console.WriteLine($"{Type} {Name} ест.\n");
+        if (food == Food)
+        {
+            _sumVolume += volume;
+        }
+
+        return _sumVolume;
+    }
+
+    public void DescribeEat()
+    {
+        if (_sumVolume == 0)
+        {
+            Console.WriteLine($"{Type} {Name} не ест такую пищу.\n");
+        }
+        else if (_sumVolume < Volume)
+        {
+            Console.WriteLine($"{Type} {Name} ест {Food}. Животное не наелось.\n");
+        }
+        else
+        {
+            Console.WriteLine($"{Type} {Name} ест {Food}. Животное сегодня наелось.\n");
+        }
+
     }
 
     public void MakeSound()
