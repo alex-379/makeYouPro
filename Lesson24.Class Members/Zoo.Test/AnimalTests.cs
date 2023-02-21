@@ -4,7 +4,7 @@ public class AnimalTests
 {
     Animal zebra = new Animal("Марти", 5, 7, "Зебра", "саввана", 10, "трава", "травоядное", "Ква-ха");
 
-    [TestCase("листья", 10, 0)]
+    [TestCase("листь", 10, 0)]
     [TestCase("трава", 10, 10)]
     [TestCase("мясо", 10, 10)]
     [TestCase("трава", 5, 15)]
