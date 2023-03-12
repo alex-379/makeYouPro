@@ -17,7 +17,7 @@ hawk.Fly();
 
 MonkeyAnimal monkey = new("Джулия");
 monkey.DescribeAnimal();
-monkey.Eat("Banana", 2);
+monkey.Eat("Banana", 1);
 monkey.DescribeEat();
 monkey.MakeSound();
 monkey.Play();
