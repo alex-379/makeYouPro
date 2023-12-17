@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:App1.Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="450">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Text="" FontSize="72" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ButtonOne" Grid.Column="0" Grid.Row="0" Content="1" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonTwo" Grid.Column="1" Grid.Row="0" Content="2" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonThree" Grid.Column="2" Grid.Row="0" Content="3" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonFour" Grid.Column="0" Grid.Row="1" Content="4" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonFive" Grid.Column="1" Grid.Row="1" Content="5" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonSix" Grid.Column="2" Grid.Row="1" Content="6" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonSeven" Grid.Column="0" Grid.Row="2" Content="7" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonEight" Grid.Column="1" Grid.Row="2" Content="8" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonNine" Grid.Column="2" Grid.Row="2" Content="9" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonZero" Grid.Column="1" Grid.Row="3" Content="0" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonSeparator" Grid.Column="0" Grid.Row="3" Content="." FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonPlus" Grid.Column="3" Grid.Row="0" Content="+" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonMinus" Grid.Column="3" Grid.Row="1" Content="-" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonDivider" Grid.Column="3" Grid.Row="2" Content=":" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonMultiply" Grid.Column="3" Grid.Row="3" Content="*" FontSize="60" BorderBrush="Black"/>
+            <Button x:Name="ButtonEqual" Grid.Column="2" Grid.Row="3" Content="=" FontSize="60" BorderBrush="Black" Background="#FF115D5D"/>
+        </Grid>
     </Grid>
 </Window>
