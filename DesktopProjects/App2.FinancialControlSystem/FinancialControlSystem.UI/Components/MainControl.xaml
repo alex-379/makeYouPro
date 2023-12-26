@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:FinancialControlSystem.UI.Components"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -17,113 +16,113 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="ButtonAccounts" Grid.Row="0" Grid.Column="0" Background="White">
+        <Button x:Name="ButtonAccounts" Grid.Row="0" Grid.Column="0" Background="White" Click="ButtonAccounts_Click">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image Source="/Resources/Images/accounts.jpg" />
+                <Image Source="/Resources/Images/accounts.jpg" Grid.Row="0" />
                 <Viewbox Grid.Row="1">
-                    <TextBlock Text="Счета" FontFamily="Segoe UI Black"  />
+                    <TextBlock Text="Счета" FontFamily="Segoe UI Black" />
                 </Viewbox>
             </Grid>
         </Button>
-        <Button x:Name="ButtonCredits" Grid.Row="0" Grid.Column="1" Background="White" >
+        <Button x:Name="ButtonCredits" Grid.Row="0" Grid.Column="1" Background="White" Click="ButtonCredits_Click" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image Source="/Resources/Images/credits.jpg" Grid.Row="0"/>
+                <Image Source="/Resources/Images/credits.jpg" Grid.Row="0" />
                 <Viewbox Grid.Row="1">
                     <TextBlock Text="Получено в кредит" FontFamily="Segoe UI Black" />
                 </Viewbox>
             </Grid>
         </Button>
-        <Button x:Name="ButtonLoans" Grid.Row="0" Grid.Column="2" Background="White">
+        <Button x:Name="ButtonLoans" Grid.Row="0" Grid.Column="2" Background="White" Click="ButtonLoans_Click">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image Source="/Resources/Images/loans.jpg" Grid.Row="0"/>
+                <Image Source="/Resources/Images/loans.jpg" Grid.Row="0" />
                 <Viewbox Grid.Row="1">
                     <TextBlock Text="Выдано в долг" FontFamily="Segoe UI Black" />
                 </Viewbox>
             </Grid>
         </Button>
-        <Button x:Name="ButtonIncomes" Grid.Row="1" Grid.Column="0" Background="White">
+        <Button x:Name="ButtonIncomes" Grid.Row="1" Grid.Column="0" Background="White" Click="ButtonIncomes_Click">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image Source="/Resources/Images/incomes.jpg" Grid.Row="0"/>
+                <Image Source="/Resources/Images/incomes.jpg" Grid.Row="0" />
                 <Viewbox Grid.Row="1">
                     <TextBlock Text="Доходы" FontFamily="Segoe UI Black" />
                 </Viewbox>
             </Grid>
         </Button>
-        <Button x:Name="ButtonExpenses" Grid.Row="1" Grid.Column="1" Background="White">
+        <Button x:Name="ButtonExpenses" Grid.Row="1" Grid.Column="1" Background="White" Click="ButtonExpenses_Click">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image Source="/Resources/Images/expenses.jpg" Grid.Row="0"/>
+                <Image Source="/Resources/Images/expenses.jpg" Grid.Row="0" />
                 <Viewbox Grid.Row="1">
                     <TextBlock Text="Расходы" FontFamily="Segoe UI Black" />
                 </Viewbox>
             </Grid>
         </Button>
-        <Button x:Name="ButtonIncomesPlan" Grid.Row="1" Grid.Column="2" Background="White">
+        <Button x:Name="ButtonIncomesPlan" Grid.Row="1" Grid.Column="2" Background="White" Click="ButtonIncomesPlan_Click">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image Source="/Resources/Images/incomesPlan.jpg" Grid.Row="0"/>
+                <Image Source="/Resources/Images/incomesPlan.jpg" Grid.Row="0" />
                 <Viewbox Grid.Row="1">
                     <TextBlock Text="Планируемые доходы" FontFamily="Segoe UI Black" />
                 </Viewbox>
             </Grid>
         </Button>
-        <Button x:Name="ButtonExpensesPlan" Grid.Row="2" Grid.Column="0" Background="White">
+        <Button x:Name="ButtonExpensesPlan" Grid.Row="2" Grid.Column="0" Background="White" Click="ButtonExpensesPlan_Click">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image Source="/Resources/Images/expensesPlan.jpg" Grid.Row="0"/>
+                <Image Source="/Resources/Images/expensesPlan.jpg" Grid.Row="0" />
                 <Viewbox Grid.Row="1">
                     <TextBlock Text="Планируемые расходы" FontFamily="Segoe UI Black" />
                 </Viewbox>
             </Grid>
         </Button>
-        <Button x:Name="ButtonCategories" Grid.Row="2" Grid.Column="1" Background="White">
+        <Button x:Name="ButtonCategories" Grid.Row="2" Grid.Column="1" Background="White" Click="ButtonCategories_Click">
+        <Grid>
+    <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Resources/Images/categories.jpg" Grid.Row="0" />
+            <Viewbox Grid.Row="1">
+                <TextBlock Text="Категории" FontFamily="Segoe UI Black" />
+            </Viewbox>
+    </Grid>
+    </Button>
+    <Button x:Name="ButtonReporting" Grid.Row="2" Grid.Column="2" Background="White" Click="ButtonReporting_Click">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Image Source="/Resources/Images/categories.jpg" Grid.Row="0"/>
-                <Viewbox Grid.Row="1">
-                    <TextBlock Text="Категории" FontFamily="Segoe UI Black" />
-                </Viewbox>
-            </Grid>
-        </Button>
-        <Button x:Name="ButtonReporting" Grid.Row="2" Grid.Column="2" Background="White">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="6*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Image Source="/Resources/Images/reporting.jpg" Grid.Row="0"/>
-                <Viewbox Grid.Row="1">
-                    <TextBlock Text="Отчётность" FontFamily="Segoe UI Black" />
-                </Viewbox>
-            </Grid>
-        </Button>
+        <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/Resources/Images/reporting.jpg" Grid.Row="0" />
+        <Viewbox Grid.Row="1">
+            <TextBlock Text="Отчётность" FontFamily="Segoe UI Black" />
+        </Viewbox>
+        </Grid>
+    </Button>
     </Grid>
 </UserControl>

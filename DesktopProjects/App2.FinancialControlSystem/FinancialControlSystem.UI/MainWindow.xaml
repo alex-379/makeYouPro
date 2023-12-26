@@ -9,9 +9,26 @@
         Title="Система учёта финансов" Height="600" Width="500">
     <Grid>
         <TabControl>
-            <TabItem Header="TabMain" Visibility="Hidden">
-                <components:MainControl>
-                </components:MainControl>
+            <TabItem x:Name="TabMain" Header="Главная">
+                <components:MainControl/>
+            </TabItem>
+            <TabItem x:Name="TabAccounts" Header="Счета">
+            </TabItem>
+            <TabItem x:Name="TabCredits" Header="Кредиты">
+            </TabItem>
+            <TabItem x:Name="TabLoans" Header="Займы">
+            </TabItem>
+            <TabItem x:Name="TabIncomes" Header="Доходы">
+            </TabItem>
+            <TabItem x:Name="TabExpenses" Header="Расходы">
+            </TabItem>
+            <TabItem x:Name="TabIncomesPlan" Header="Планируемые доходы">
+            </TabItem>
+            <TabItem x:Name="TabExpensesPlan" Header="Планируемые расходы">
+            </TabItem>
+            <TabItem x:Name="TabCategories" Header="Категории">
+            </TabItem>
+            <TabItem x:Name="TabReporting" Header="Отчёты">
             </TabItem>
         </TabControl>
     </Grid>
