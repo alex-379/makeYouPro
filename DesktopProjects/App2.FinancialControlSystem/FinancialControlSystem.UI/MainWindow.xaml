@@ -4,9 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinancialControlSystem.UI"
+        xmlns:components="clr-namespace:FinancialControlSystem.UI.Components"
         mc:Ignorable="d"
-        Title="MainWindow" Height="850" Width="800">
+        Title="Система учёта финансов" Height="600" Width="500">
     <Grid>
-
+        <TabControl>
+            <TabItem Header="TabMain" Visibility="Hidden">
+                <components:MainControl>
+                </components:MainControl>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

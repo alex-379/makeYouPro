@@ -9,7 +9,32 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\account.png" />
+    <None Remove="Resources\Images\accounts.jpg" />
+    <None Remove="Resources\Images\categories.jpg" />
+    <None Remove="Resources\Images\credits.jpg" />
+    <None Remove="Resources\Images\expenses.jpg" />
+    <None Remove="Resources\Images\expensesPlan.jpg" />
+    <None Remove="Resources\Images\incomes.jpg" />
+    <None Remove="Resources\Images\incomesPlan.jpg" />
+    <None Remove="Resources\Images\loans.jpg" />
+    <None Remove="Resources\Images\reporting.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FinancialControlSystem.Logic\FinancialControlSystem.Logic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\accounts.jpg" />
+    <Resource Include="Resources\Images\categories.jpg" />
+    <Resource Include="Resources\Images\credits.jpg" />
+    <Resource Include="Resources\Images\expenses.jpg" />
+    <Resource Include="Resources\Images\expensesPlan.jpg" />
+    <Resource Include="Resources\Images\incomes.jpg" />
+    <Resource Include="Resources\Images\incomesPlan.jpg" />
+    <Resource Include="Resources\Images\loans.jpg" />
+    <Resource Include="Resources\Images\reporting.jpg" />
   </ItemGroup>
 
 </Project>
