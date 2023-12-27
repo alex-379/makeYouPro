@@ -10,25 +10,34 @@
     <Grid>
         <TabControl>
             <TabItem x:Name="TabMain" Header="Главная">
-                <components:MainControl/>
+                <components:MainControl />
             </TabItem>
             <TabItem x:Name="TabAccounts" Header="Счета">
+                <components:AccountsControl />
             </TabItem>
             <TabItem x:Name="TabCredits" Header="Кредиты">
+                <components:CreditsControl />
             </TabItem>
             <TabItem x:Name="TabLoans" Header="Займы">
+                <components:LoansControl />
             </TabItem>
             <TabItem x:Name="TabIncomes" Header="Доходы">
+                <components:IncomesControl />
             </TabItem>
             <TabItem x:Name="TabExpenses" Header="Расходы">
+                <components:ExpensesControl />
             </TabItem>
             <TabItem x:Name="TabIncomesPlan" Header="Планируемые доходы">
+                <components:IncomesPlanControl />
             </TabItem>
             <TabItem x:Name="TabExpensesPlan" Header="Планируемые расходы">
+                <components:ExpensesPlanControl />
             </TabItem>
             <TabItem x:Name="TabCategories" Header="Категории">
+                <components:CategoriesControl />
             </TabItem>
             <TabItem x:Name="TabReporting" Header="Отчёты">
+                <components:ReportingControl />
             </TabItem>
         </TabControl>
     </Grid>
