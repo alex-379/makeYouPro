@@ -4,6 +4,23 @@
              xmlns:local="clr-namespace:FinancialControlSystem.UI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="ButtonTab">
+            <Setter Property="Control.Background" Value="White" />
+        </Style>
+        <Style x:Key="ButtonOperation">
+            <Setter Property="Control.Background" Value="White" />
+            <Setter Property="Control.BorderBrush" Value="White" />
+            <Setter Property="Control.Margin" Value="3" />
+            <Setter Property="Control.Background" Value="Transparent" />
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

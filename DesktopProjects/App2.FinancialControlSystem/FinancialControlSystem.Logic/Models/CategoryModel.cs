@@ -1,7 +1,10 @@
 ﻿namespace FinancialControlSystem.Logic.Models
 {
-    public class CategoryModel
+    public class CategoryModel:AbstractModel
     {
-        public string Name { get; set; }
+        public CategoryModel()
+        {
+        }
+         
     }
 }
