@@ -2,8 +2,8 @@
 
 namespace FinancialControlSystem.Logic.Interfaces
 {
-    public interface IAdderer
+    public interface IGetter
     {
-        public void Add<T>(T Model) where T : class;
+        public void GetModelById(int id);
     }
 }

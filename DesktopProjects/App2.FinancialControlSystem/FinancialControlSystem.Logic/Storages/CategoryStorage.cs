@@ -1,35 +1,80 @@
 ﻿using FinancialControlSystem.Logic.Interfaces;
 using FinancialControlSystem.Logic.Models;
-using System.Transactions;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace FinancialControlSystem.Logic.Storages
 {
-    public class CategoryStorage:AbstractStorage,IAdderer,IRemover
+    public class CategoryStorage : AbstractStorage, IRemover
     {
+        [JsonInclude]
         private Dictionary<int, CategoryModel> _categories;
 
         public CategoryStorage()
         {
             _categories = [];
-
-            _transactionId = 0;
+            _fileLink = Options.CategoryFileLink;
         }
 
-        public void AddItem()
+        public void Add(CategoryModel category)
         {
-            Console.WriteLine();
+            LoadAll();
+
+            category.Id = _id;
+            _categories.Add(_id, category);
+            _id++;
+
+            SaveAll();
         }
 
-        public void RemoveItem()
+        public void RemoveById(int id)
         {
-            Console.WriteLine();
+            LoadAll();
+
+            _categories.Remove(id);
+
+            SaveAll();
         }
 
-        public void AddItem(CategoryModel category)
+        public CategoryModel GetModelById(int id)
         {
-            _categories.Add(_transactionId, category);
-            _transactionId++;
+            LoadAll();
+
+            return _categories[id];
         }
 
+        public List<CategoryModel> GetAllModels()
+        {
+            LoadAll();
+
+            return [.. _categories.Values];
+        }
+
+        public void Update(CategoryModel category)
+        {
+            LoadAll();
+
+            CategoryModel crnt = _categories[category.Id];
+            crnt.Name = category.Name;
+
+            SaveAll();
+        }
+
+        private void LoadAll()
+        {
+            string json;
+
+            if (File.Exists(_fileLink))
+            {
+                using (StreamReader reader = new(_fileLink))
+                {
+                    json = reader.ReadToEnd();
+                    reader.Close();
+                }
+                CategoryStorage tmp = JsonSerializer.Deserialize<CategoryStorage>(json);
+                _categories = tmp._categories;
+                _id = tmp._id;
+            }
+        }
     }
 }

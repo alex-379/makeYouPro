@@ -7,6 +7,10 @@
         <Style x:Key="ButtonTab">
             <Setter Property="Control.Background" Value="White" />
         </Style>
+        <Style x:Key="ButtonAction">
+            <Setter Property="Control.Background" Value="White"/>
+            <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        </Style>
         <Style x:Key="ButtonOperation">
             <Setter Property="Control.Background" Value="White" />
             <Setter Property="Control.BorderBrush" Value="White" />
@@ -21,6 +25,10 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+        <Style x:Key="TextBox">
+            <Setter Property="Control.FontSize" Value="20"/>
+            <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
         </Style>
     </Application.Resources>
 </Application>

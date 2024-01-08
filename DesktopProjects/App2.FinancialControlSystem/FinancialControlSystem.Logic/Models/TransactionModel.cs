@@ -1,10 +1,10 @@
 ﻿namespace FinancialControlSystem.Logic.Models
 {
-    public class TransactionModel
+    public class TransactionModel:AbstractModel
     {
         public int FinanceId { get; set; }
 
-        public string Name { get; set; }
+        public int CategoryId { get; set; }
 
         public decimal  Summ { get; set; }
 

@@ -6,6 +6,38 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="ButtonAdd" Grid.Row="2" Grid.Column="1" Style="{StaticResource ButtonOperation}" Click="ButtonAdd_Click">
+            <Image Source="/Resources/Images/add.jpg" />
+        </Button>
+        <Button x:Name="ButtonRemove" Grid.Row="1" Grid.Column="1" Style="{StaticResource ButtonOperation}">
+            <Image Source="/Resources/Images/remove.jpg" />
+        </Button>
+        <ListBox x:Name="ListBoxCategories" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Background="Aqua" BorderThickness="0" Margin="5"/>
+        <Grid x:Name="GridAddButton" Grid.RowSpan="3" Grid.ColumnSpan="2" Background="WhiteSmoke" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="Category" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextBox}"/>
+            <Button x:Name="ButtonOk" Content="ОК" Grid.Row="3" Grid.Column="1" Style="{StaticResource ButtonAction}"/>
+            <Button x:Name="ButtonCansel" Content="Отмена" Grid.Row="3" Grid.Column="2" Style="{StaticResource ButtonAction}" Click="ButtonCansel_Click"/>
+        </Grid>
     </Grid>
 </UserControl>

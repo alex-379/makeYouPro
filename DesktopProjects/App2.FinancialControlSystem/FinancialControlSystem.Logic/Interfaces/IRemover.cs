@@ -2,6 +2,6 @@
 {
     public interface IRemover
     {
-        public void RemoveItem();
+        public void RemoveById(int id);
     }
 }

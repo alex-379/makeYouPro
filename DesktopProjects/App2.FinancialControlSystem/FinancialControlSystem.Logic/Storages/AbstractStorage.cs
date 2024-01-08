@@ -1,50 +1,23 @@
-﻿using FinancialControlSystem.Logic.Models;
-using FinancialControlSystem.Logic.Interfaces;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace FinancialControlSystem.Logic.Storages
 {
     public abstract class AbstractStorage
     {
-        private Dictionary<int, CategoryModel> _categories;
-        private Dictionary<int, TransactionModel> _transactions;
-        private Dictionary<int, FinanceModel> _finances;
+        [JsonInclude]
+        protected int _id = 0;
 
-        protected int _transactionId;
+        protected string _fileLink;
 
-        public AbstractStorage()
+        protected void SaveAll()
         {
-            _categories = [];
-            _transactions = [];
-            _finances = [];
-
-            _transactionId = 0;
-        }
-
-        //public void AddItem(CategoryModel category)
-        //{
-        //    _categories.Add(_transactionId, category);
-        //    _transactionId++;
-        //}
-
-        //public void AddCategory(CategoryModel category)
-        //{
-        //    _categories.Add(_transactionId, category);
-        //    _transactionId++;
-        //}
-
-        public void RemoveCategoryById(int id)
-        {
-            _categories.Remove(id);
-        }
-
-        public CategoryModel GetCategoryById(int id)
-        {
-            return _categories[id];
-        }
-
-        public List<CategoryModel> GetAllCategories()
-        {
-            return [.. _categories.Values];
+            string json = JsonSerializer.Serialize(this);
+            using (StreamWriter writer = new(_fileLink, false))
+            {
+                writer.Write(json);
+                writer.Close();
+            }
         }
     }
 }

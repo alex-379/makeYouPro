@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using FinancialControlSystem.Logic.Storages;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace FinancialControlSystem.UI.Components
 {
@@ -7,6 +9,22 @@ namespace FinancialControlSystem.UI.Components
         public CategoriesControl()
         {
             InitializeComponent();
+        }
+
+        private void ButtonAdd_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            GridAddButton.Visibility = Visibility.Visible;
+        }
+
+        private void ButtonCansel_Click(object sender, RoutedEventArgs e)
+        {
+            GridAddButton.Visibility = Visibility.Hidden;
+        }
+
+        public void LoadAllCategories()
+        {
+            FinanceStorage Categories = new ();
+            //ListBoxCategories.Items.
         }
     }
 }

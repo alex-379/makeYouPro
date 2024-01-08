@@ -2,10 +2,8 @@
 
 namespace FinancialControlSystem.Logic.Models
 {
-    public class FinanceModel
+    public class FinanceModel:AbstractModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
 
         public string Bank { get; set; }
 
